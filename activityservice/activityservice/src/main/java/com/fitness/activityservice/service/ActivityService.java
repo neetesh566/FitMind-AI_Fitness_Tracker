@@ -8,12 +8,20 @@ import com.fitness.activityservice.models.Activity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+
 @Service
 @RequiredArgsConstructor
 public class ActivityService {
     private  final ActivityRepository activityRepository;
+    private final UserValidationService userValidationService;
 
     public  ActivityResponse trackActivity(ActivityRequest request) {
+
+//        boolean isValidUser=userValidationService.validateUser(request.getUserId());
+//        if(!isValidUser){
+//            throw new RuntimeException("Invalid user" + request.getUserId());
+//        }
+
         Activity activity = Activity.builder()
                 .userId(request.getUserId())
                 .type(request.getType())
