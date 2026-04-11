@@ -26,3 +26,6 @@ kafka:
   topic:
     name: activity-events
 
+
+
+
