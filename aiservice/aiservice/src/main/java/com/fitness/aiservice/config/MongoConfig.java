@@ -8,6 +8,15 @@ import org.springframework.data.mongodb.config.EnableMongoAuditing;
 
 @Configuration
 @EnableMongoAuditing
-public class MongoConfig  {
+public class MongoConfig extends AbstractMongoClientConfiguration {
 
+    @Override
+    protected String getDatabaseName() {
+        return "airecommendationfitness"; // ✅ your desired DB
+    }
+
+    @Override
+    public MongoClient mongoClient() {
+        return MongoClients.create("mongodb://localhost:27017/airecommendationfitness");
+    }
 }
