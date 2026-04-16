@@ -1,13 +1,8 @@
 spring:
   application:
-    name: ai-service
-
+    name: gateway-service
 
   config:
     import: optional:configserver:http://localhost:8888
-
-
-
-
 
 

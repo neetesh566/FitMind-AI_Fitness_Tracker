@@ -42,7 +42,7 @@ public class ActivityAIService {
                     .replaceAll("\\n```","")
                     .trim();
 
-//            log.info("RESPONSE FROM CLEANED AI {}", jsonContent);
+            log.info("RESPONSE FROM CLEANED AI {}", jsonContent);
 
             JsonNode analysisJson = mapper.readTree(jsonContent);
             JsonNode analysisNode = analysisJson.path("analysis");
