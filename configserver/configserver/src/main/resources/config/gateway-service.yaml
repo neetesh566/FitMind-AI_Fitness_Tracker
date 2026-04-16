@@ -11,6 +11,12 @@ eureka:
     instance-id: ${spring.application.name}:${server.port}
 
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8181/realms/fitmind/protocol/openid-connect/certs
+
   cloud:
     gateway:
       server:
