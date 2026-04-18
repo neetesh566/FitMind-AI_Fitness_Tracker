@@ -1,4 +1,3 @@
- import './App.css'
 import { Box, Button } from "@mui/material"
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "react-oauth2-code-pkce"
