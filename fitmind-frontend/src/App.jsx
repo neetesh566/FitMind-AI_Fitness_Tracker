@@ -1,5 +1,4 @@
-
-// import './App.css'
+ import './App.css'
 import { Box, Button } from "@mui/material"
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "react-oauth2-code-pkce"
@@ -10,8 +9,29 @@ import ActivityForm from "./components/ActivityForm";
 import ActivityList from "./components/ActivityList";
 import ActivityDetail from "./components/ActivityDetail";
 
-import { BrowserRouter as Router,Navigate,Routes,Route,useLocation } from "react-router"
+const ActivitiesPage = () => {
+  return (
+    <Box sx={{ p: 2, border: '1px dashed grey' }}>
+      <ActivityForm onActivityAdded = { () => window.location.reload()}/>
+      <ActivityList />
+    </Box>
+  );
+}
+
 function App() {
+  
+  const { token, tokenData, logIn, logOut, isAuthenticated } 
+      = useContext(AuthContext);
+  const dispatch = useDispatch();
+  const [authReady, setAuthReady] = useState(false);
+
+  useEffect(() => {
+    if (token) {
+      dispatch(setCredentials({token, user: tokenData}));
+      setAuthReady(true);
+    }
+  }, [token, tokenData, dispatch]);
+
   return (
     <Router>
       {!token ? (
