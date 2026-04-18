@@ -1,7 +1,7 @@
 package com.fitness.aiservice.models;
 
 
-import com.fitness.activityservice.models.ActivityType;
+//import com.fitness.activityservice.models.ActivityType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

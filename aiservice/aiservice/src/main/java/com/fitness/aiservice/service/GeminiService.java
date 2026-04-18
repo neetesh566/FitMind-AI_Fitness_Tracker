@@ -18,6 +18,7 @@ public class GeminiService {
 
     public GeminiService(WebClient.Builder webClientBuilder) {
         this.webClient = webClientBuilder.build();
+
     }
 
     public String getRecommendations(String details){
